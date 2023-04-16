@@ -26,7 +26,7 @@ class CardsAdapter : RecyclerView.Adapter<CardsAdapter.CardViewHolder>() {
 
     override fun onBindViewHolder(holder: CardViewHolder, position: Int) {
         holder.tvCount.text = numbers.get(position).toString()
-        if(numbers[position]%2==0){
+        if(numbers[position] % 2 == 0){
             holder.card.setCardBackgroundColor(Color.RED)
         } else {
             holder.card.setCardBackgroundColor(Color.BLUE)
