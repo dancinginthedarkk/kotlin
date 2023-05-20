@@ -11,7 +11,7 @@ import com.example.secondapp.R
 
 class ItemAdapter(
     private val onReachEndListener: () -> Unit,
-    private val onItemClickListener: (Item) -> Unit
+    private val onItemClickListener: (Item, Int) -> Unit
 ) : RecyclerView.Adapter<ItemAdapter.CatsViewHolder>() {
 
     private var cats = listOf<Item>()
@@ -36,7 +36,7 @@ class ItemAdapter(
         }
 
         holder.itemView.setOnClickListener {
-            onItemClickListener.invoke(cat)
+            onItemClickListener.invoke(cat, position)
         }
     }
 

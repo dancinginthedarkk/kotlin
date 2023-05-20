@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ProgressBar
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.RecyclerView
 import com.example.secondapp.presentationlayer.ItemAdapter
@@ -55,7 +56,8 @@ class MainFragment : Fragment() {
             onReachEndListener = {
                 viewModel.loadCats()
             },
-            onItemClickListener = { cat ->
+            onItemClickListener = { cat, position ->
+                Toast.makeText(context, "Вы кликнули на кота номер  ${position + 1}!", Toast.LENGTH_SHORT).show()
             }
         )
         recyclerView.adapter = adapter
